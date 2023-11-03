@@ -1,0 +1,17 @@
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{github.head_ref}}
+      - uses: actions/setup-node@v4
+        with:
+          cache: npm
+          cache-dependency-path: '**/package-lock.json'
+          node-version-file: .nvmrc
+      - run: bash ./scripts/setup.sh
+      - run: bash ./scripts/test.sh
+name: Verify PR
+
+on: pull_request_target

@@ -1,0 +1,15 @@
+services:
+  localstack:
+    environment:
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=eu-west-2
+    image: localstack/localstack:2.3.2
+    ports:
+      - '4566:4566'
+      - '4571:4571'
+    volumes:
+      - source: ./scripts/docker/setup-local-s3.sh
+        target: /docker-entrypoint-initaws.d/setup-local-s3.sh
+        type: bind
+version: '3.7'

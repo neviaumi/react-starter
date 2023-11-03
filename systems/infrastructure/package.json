@@ -1,0 +1,41 @@
+{
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.441.0",
+    "@pulumi/aws": "6.7.0",
+    "@pulumi/awsx": "2.1.1",
+    "@pulumi/pulumi": "3.84.0",
+    "@pulumi/random": "4.14.0",
+    "dotenv": "16.3.1",
+    "handlebars": "4.7.7",
+    "lodash.kebabcase": "4.1.1",
+    "nanoid": "5.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.21.5",
+    "@babel/core": "7.23.2",
+    "@babel/preset-typescript": "7.23.2",
+    "@busybox/babel-preset-typescript": "2023.9.30-alpha.2347",
+    "@busybox/eslint-config": "2023.9.30-alpha.2347",
+    "@busybox/prettier-config": "2023.9.30-alpha.2347",
+    "@busybox/tsconfig": "2023.9.30-alpha.2347",
+    "@pulumi/awsguard": "0.4.0",
+    "@pulumi/policy": "1.7.0",
+    "@types/lodash.kebabcase": "4.1.7",
+    "@types/node": "20.1.1",
+    "eslint": "8.52.0",
+    "typescript": "5.2.2"
+  },
+  "engines": {
+    "node": ">=18",
+    "yarn": "Use npm"
+  },
+  "license": "MIT",
+  "main": "bin/index.js",
+  "name": "infrastructure",
+  "private": true,
+  "scripts": {
+    "build": "npx babel --out-dir ./bin --extensions .ts --ignore ./src/aws/ecr/node_modules --copy-files --no-copy-ignored ./src"
+  },
+  "type": "module",
+  "version": "2023.10.29-alpha.1713"
+}

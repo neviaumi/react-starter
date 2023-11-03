@@ -1,0 +1,63 @@
+concurrency: 
+  cancel-in-progress: false
+  group: release
+env: 
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_DEFAULT_REGION: eu-west-2
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  CI: true
+jobs: 
+  merge-back: 
+    needs: release
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v4
+      - env:
+          GITHUB_TOKEN: ${{secrets.REPO_SCOPED_TOKEN}}
+          HEAD_BRANCH: ${{needs.release.outputs.release_branch}}
+          PR_BODY: ${{format('Bump version to v{0}', needs.release.outputs.released_version)}}
+          PR_TITLE: ${{format('Merge back v{0} to', needs.release.outputs.released_version)}}
+        name: Open PR to $GITHUB_REF_NAME
+        run: |
+          PR_URL=$(gh pr create --head "$HEAD_BRANCH" --title "$PR_TITLE $GITHUB_REF_NAME" --body "$PR_BODY" --base "$GITHUB_REF_NAME")
+          gh pr merge --auto --rebase --delete-branch "$PR_URL"
+  release: 
+    outputs: 
+      release_branch: ${{steps.release.outputs.release_branch}}
+      released_version: ${{ steps.release.outputs.released_version }}
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v4
+      - name: Use Node.js lts
+        uses: actions/setup-node@v4
+        with: 
+          node-version-file: .nvmrc
+      - name: Setup repository
+        run: bash ./scripts/setup.sh
+      - name: Test the build
+        run: bash ./scripts/test.sh
+      - env: 
+          ENVIRONMENT: ${{ inputs.environment }}
+        id: release
+        name: Release to AWS
+        run: |
+          source ./scripts/deploy.sh "$ENVIRONMENT";
+          echo "released_version=$RELEASE_VERSION" >> $GITHUB_OUTPUT;
+          echo "release_branch=$RELEASE_BRANCH" >> $GITHUB_OUTPUT;
+        shell: bash
+
+name: Release to AWS
+
+on: 
+  workflow_dispatch: 
+    inputs: 
+      environment: 
+        description: Environment
+        options: 
+          - production
+        required: true
+        type: choice
+permissions: 
+  contents: write
+  id-token: write
+  pages: write

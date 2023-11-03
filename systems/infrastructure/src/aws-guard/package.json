@@ -1,0 +1,12 @@
+{
+  "engines": {
+    "node": ">=14",
+    "yarn": "Use npm"
+  },
+  "license": "MIT",
+  "main": "./index.js",
+  "name": "aws-guard",
+  "private": true,
+  "type": "commonjs",
+  "version": "1.3.0"
+}

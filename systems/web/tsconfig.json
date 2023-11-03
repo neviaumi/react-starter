@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "emitDeclarationOnly": false,
+    "noEmit": true
+  },
+  "extends": "@busybox/tsconfig/tsconfig-react.json",
+  "include": ["src", "cypress/support/component.tsx"]
+}

@@ -1,0 +1,6 @@
+description: A minimal AWS TypeScript Pulumi for serverless
+name: project-bootstrap
+runtime:
+  name: nodejs
+  options:
+    typescript: false

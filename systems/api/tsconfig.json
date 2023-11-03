@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "noEmit": false,
+    "outDir": "./dist",
+    "verbatimModuleSyntax": false
+  },
+  "exclude": ["node_modules", "dist"],
+  "extends": "@busybox/tsconfig/tsconfig-commonjs.json"
+}

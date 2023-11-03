@@ -1,0 +1,60 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input AddGameToLibraryArgs {
+  boxArtImageUrl: String
+  genre: String!
+  name: String!
+  numberOfPlayers: Float!
+  platform: String!
+  publisher: String!
+  releaseDate: Date!
+  userId: String!
+}
+
+"""Date custom scalar type"""
+scalar Date
+
+type Game {
+  boxArtImageUrl: String
+  createdAt: Date!
+  genre: String!
+  id: ID!
+  name: String!
+  numberOfPlayers: Float!
+  platform: String!
+  publisher: String!
+  releaseDate: Date!
+  updatedAt: Date!
+}
+
+type GameList {
+  edges: [GameNode!]!
+  pageInfo: PageInfo!
+}
+
+type GameNode {
+  node: Game!
+}
+
+type Mutation {
+  addGameToLibrary(data: AddGameToLibraryArgs!): Game!
+  prepareUploadGameBoxArt(fileName: String!): PrepareUpload!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  nextPageToken: String
+}
+
+type PrepareUpload {
+  id: ID!
+  resultPublicUrl: String!
+  uploadUrl: String!
+}
+
+type Query {
+  game(id: ID!): Game!
+  gameList(limit: Int = 10, name: String, nextPageToken: String, platform: String, userId: ID): GameList!
+}

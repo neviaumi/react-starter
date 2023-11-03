@@ -1,0 +1,11 @@
+config:
+  aws:accessKey: test
+  aws:endpoints:
+    - s3: http://localhost:4566
+    - dynamodb: http://localhost:4566
+  aws:region: eu-west-2
+  aws:s3UsePathStyle: 'true'
+  aws:secretKey: test
+  aws:skipCredentialsValidation: 'true'
+  aws:skipRequestingAccountId: 'true'
+encryptionsalt: v1:LANXIib73Ik=:v1:hQiOJNfP2vck6peb:j2pXpp4yjtp3PSpn8zTk3wt56Q/Fdw==

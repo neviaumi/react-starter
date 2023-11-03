@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+set -ex
+bash ./scripts/test.sh
+npx lerna exec --concurrency 1 --stream -- "test ! -f  scripts/pre-push.sh || bash scripts/pre-push.sh"
+

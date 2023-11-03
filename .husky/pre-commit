@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+. "$(dirname -- "$0")/_/husky.sh"
+
+set -ex
+
+npx lerna exec --concurrency 1 --stream --since HEAD --exclude-dependents -- "test ! -f  scripts/pre-commit.sh || bash scripts/pre-commit.sh"

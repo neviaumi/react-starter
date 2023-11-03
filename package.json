@@ -8,7 +8,7 @@
     "@busybox/commitlint-config": "2023.9.20-alpha.2340",
     "@busybox/eslint-config": "2023.9.20-alpha.2340",
     "@busybox/prettier-config": "2023.9.20-alpha.2340",
-    "@commitlint/cli": "17.6.3",
+    "@commitlint/cli": "17.8.1",
     "commitlint": "18.2.0",
     "eslint": "8.52.0",
     "husky": "8.0.3",

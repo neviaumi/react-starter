@@ -1,39 +1,47 @@
 {
-  "author": "",
   "dependencies": {
-    "lerna": "7.4.2"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
-  "description": "",
   "devDependencies": {
-    "@busybox/commitlint-config": "2023.9.20-alpha.2340",
-    "@busybox/eslint-config": "2023.9.20-alpha.2340",
-    "@busybox/prettier-config": "2023.9.20-alpha.2340",
+    "@busybox/commitlint-config": "2023.9.30-alpha.2347",
+    "@busybox/cypress": "2023.9.30-alpha.2347",
+    "@busybox/eslint-config": "2023.9.30-alpha.2347",
+    "@busybox/prettier-config": "2023.9.30-alpha.2347",
+    "@busybox/tailwindcss-config": "2023.9.30-alpha.2347",
+    "@busybox/tsconfig": "2023.9.30-alpha.2347",
     "@commitlint/cli": "17.8.1",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.2.14",
+    "@vitejs/plugin-react": "4.0.0",
+    "autoprefixer": "10.4.16",
     "commitlint": "18.2.0",
+    "cypress": "13.3.3",
     "eslint": "8.52.0",
     "husky": "8.0.3",
     "is-ci": "3.0.1",
     "lint-staged": "15.0.2",
-    "mrm": "4.1.14",
-    "prettier": "2.8.8",
-    "prettier-plugin-tailwindcss": "0.4.1",
-    "typescript": "5.2.2"
+    "tailwindcss": "3.3.5",
+    "typescript": "5.2.2",
+    "vite": "4.5.0"
   },
   "engines": {
-    "node": ">=14",
+    "node": ">=18",
     "yarn": "Use npm"
   },
   "license": "MIT",
-  "name": "app",
+  "name": "@busybox/react-starter",
   "private": true,
-  "repository": "git@github.com/davidNHK/project-bootstrap",
+  "repository": "git@github.com/davidNHK/react-starter",
   "resolutions": {
     "prettier": "2.8.8"
   },
   "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
     "prepare": "is-ci || husky install",
-    "prettier": "prettier",
-    "start:dev": "lerna run --parallel start:dev"
+    "preview": "vite preview"
   },
-  "version": "0.0.1"
+  "type": "module",
+  "version": "2023.10.29-alpha.1713"
 }

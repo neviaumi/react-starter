@@ -36,7 +36,7 @@
     "@busybox/prettier-config": "2023.9.30-alpha.2347",
     "@busybox/tsconfig": "2023.9.30-alpha.2347",
     "@jest/globals": "29.7.0",
-    "@nestjs/cli": "10.1.18",
+    "@nestjs/cli": "10.2.1",
     "@nestjs/schematics": "10.0.3",
     "@nestjs/testing": "10.2.8",
     "@types/aws-lambda": "8.10.125",

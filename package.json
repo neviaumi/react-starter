@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "ramda": "0.29.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -11,6 +12,7 @@
     "@busybox/tailwindcss-config": "v2023.11.3-alpha.2041",
     "@busybox/tsconfig": "v2023.11.3-alpha.2041",
     "@commitlint/cli": "17.8.1",
+    "@types/ramda": "0.29.8",
     "@types/react": "18.2.34",
     "@types/react-dom": "18.2.14",
     "@vitejs/plugin-react": "4.1.1",

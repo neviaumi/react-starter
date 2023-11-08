@@ -1,0 +1,42 @@
+.userRegisterForm {
+    --space-between-field: 0.5rem;
+    --space-between-label: 0.25rem;
+    --error-color: #ff0000;
+    width: 16rem;
+}
+
+.userRegisterForm fieldset {
+    appearance: none;
+    border: none;
+    padding: 0;
+    padding-inline: 0;
+    padding-block: 0;
+    margin-inline: 0;
+    margin-bottom: var(--space-between-field);
+    display: grid;
+    grid-template-columns: [label] 4rem [input] 1fr;
+    grid-template-rows: [input-line] 1fr [info-line] 1fr;
+}
+
+.userRegisterForm fieldset [role='status']{
+    grid-column: 2;
+    color: var(--error-color);
+}
+
+.userRegisterForm fieldset label {
+    margin-right: var(--space-between-label);
+}
+
+.userRegisterForm fieldset label:has(+ input:invalid:focus),.userRegisterForm fieldset label:has(+ input:invalid:not(:placeholder-shown))  {
+    color: var(--error-color);
+}
+
+.userRegisterForm fieldset input:invalid:not(:placeholder-shown) {
+    border-color: var(--error-color);
+    border-width: 1px;
+}
+
+.userRegisterForm fieldset input:invalid:focus {
+    border-color: var(--error-color);
+    border-width: 1px;
+}

@@ -10,6 +10,7 @@ module.exports = {
   ],
   root: true,
   rules: {
+    'tailwindcss/no-custom-classname': 'off',
     'unicorn/consistent-function-scoping': 'off',
   },
   settings: {

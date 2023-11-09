@@ -16,7 +16,7 @@
     "@vitejs/plugin-react": "4.1.1",
     "autoprefixer": "10.4.16",
     "commitlint": "18.2.0",
-    "cypress": "13.4.0",
+    "cypress": "13.5.0",
     "eslint": "8.53.0",
     "husky": "8.0.3",
     "is-ci": "3.0.1",

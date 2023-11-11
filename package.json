@@ -1,15 +1,20 @@
 {
   "dependencies": {
+    "@mui/base": "5.0.0-beta.23",
+    "@types/ramda": "0.29.8",
+    "clsx": "2.0.0",
+    "ramda": "0.29.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "7.48.2"
   },
   "devDependencies": {
-    "@busybox/commitlint-config": "v2023.11.3-alpha.2041",
-    "@busybox/cypress": "v2023.11.3-alpha.2041",
-    "@busybox/eslint-config": "v2023.11.3-alpha.2041",
-    "@busybox/prettier-config": "v2023.11.3-alpha.2041",
-    "@busybox/tailwindcss-config": "v2023.11.3-alpha.2041",
-    "@busybox/tsconfig": "v2023.11.3-alpha.2041",
+    "@busybox/commitlint-config": "2023.11.11-alpha.305",
+    "@busybox/cypress": "2023.11.11-alpha.305",
+    "@busybox/eslint-config": "2023.11.11-alpha.305",
+    "@busybox/prettier-config": "2023.11.11-alpha.305",
+    "@busybox/tailwindcss-config": "2023.11.11-alpha.305",
+    "@busybox/tsconfig": "2023.11.11-alpha.305",
     "@commitlint/cli": "17.8.1",
     "@types/react": "18.2.37",
     "@types/react-dom": "18.2.15",
